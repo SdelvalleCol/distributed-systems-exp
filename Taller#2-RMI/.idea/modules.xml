@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClienteRMI/ClienteRMI.iml" filepath="$PROJECT_DIR$/ClienteRMI/ClienteRMI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServidorRMI/ServidorRMI.iml" filepath="$PROJECT_DIR$/ServidorRMI/ServidorRMI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Taller#2-RMI.iml" filepath="$PROJECT_DIR$/.idea/Taller#2-RMI.iml" />
+    </modules>
+  </component>
+</project>
