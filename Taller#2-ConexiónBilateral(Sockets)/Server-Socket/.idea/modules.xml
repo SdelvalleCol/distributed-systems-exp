@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ClienteSockets.iml" filepath="$PROJECT_DIR$/ClienteSockets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Server-Socket.iml" filepath="$PROJECT_DIR$/Server-Socket.iml" />
     </modules>
   </component>
 </project>

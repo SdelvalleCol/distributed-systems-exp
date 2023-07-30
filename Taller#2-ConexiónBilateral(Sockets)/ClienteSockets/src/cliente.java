@@ -1,31 +1,49 @@
+import data.cancion;
+
 import java.io.*;
-import java.net.*;
+import java.net.Socket;
 
 public class cliente {
-    private Socket socket;
-    BufferedReader input ;
-    PrintWriter output;
-    BufferedReader reader;
+    private String ip;
+    private int puerto;
+    private Socket cliente;
 
-    public cliente() throws IOException {
-        this.socket = new Socket("localhost", 5000);
-        this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        this.output =  new PrintWriter(socket.getOutputStream(), true);
-        this.reader =  new BufferedReader(new InputStreamReader(System.in));
+    public cliente(String ip, int puerto) throws IOException, ClassNotFoundException {
+        this.ip = ip;
+        this.puerto = puerto;
+        cliente = new Socket(this.ip, this.puerto);
+        System.out.println("Conectado a la IP " + ip + " Al puerto " + puerto);
         run();
     }
 
-    public void run() throws IOException {
-        while (true) {
-            System.out.println("Ingresa el nombre de la canción (o 'exit' para salir): ");
-            String mensaje_cliente = this.reader.readLine();
-            output.println(mensaje_cliente);
-            if (mensaje_cliente.equalsIgnoreCase("exit")) {
-                break;
+    private void run() throws IOException, ClassNotFoundException {
+        try {
+            while (true) {
+                // Entrada y envío del mensaje
+                BufferedReader entradaUsuario = new BufferedReader(new InputStreamReader(System.in));
+                System.out.print("Ingrese un mensaje para el servidor (o 'salir' para desconectar): ");
+                String mensajeCliente = entradaUsuario.readLine();
+                PrintWriter salidaServidor = new PrintWriter(this.cliente.getOutputStream(), true);
+                salidaServidor.println(mensajeCliente);
+
+                if (mensajeCliente.equals("salir")) {
+                    System.out.println("Se desconectó del servidor");
+                    this.cliente.close();
+                    break; // Salimos del bucle while
+                } else {
+                    // Recibir el objeto
+                    ObjectInputStream entradaServidor = new ObjectInputStream(this.cliente.getInputStream());
+                    cancion objetoRecibido = (cancion) entradaServidor.readObject();
+                    if (objetoRecibido != null) {
+                        System.out.println("Objeto recibido del servidor: " + objetoRecibido.toString());
+                    } else {
+                        System.out.println("No se encontró la canción");
+                    }
+                }
             }
-            String respuesta = input.readLine();
-            System.out.println("Respuesta del servidor: " + respuesta);
+        } catch (IOException e) {
+            System.out.println(e);
+            System.out.println("Se perdió la conexión con el servidor");
         }
-        socket.close();
     }
 }

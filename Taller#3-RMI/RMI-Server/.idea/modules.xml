@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ClienteSockets.iml" filepath="$PROJECT_DIR$/ClienteSockets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMI-Server.iml" filepath="$PROJECT_DIR$/RMI-Server.iml" />
     </modules>
   </component>
 </project>
