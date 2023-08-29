@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://srs/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://srs/">
+
+<xs:element name="busqueda" type="tns:busqueda"></xs:element>
+
+<xs:element name="busquedaResponse" type="tns:busquedaResponse"></xs:element>
+
+<xs:element name="obtener_todo" type="tns:obtener_todo"></xs:element>
+
+<xs:element name="obtener_todoResponse" type="tns:obtener_todoResponse"></xs:element>
+
+<xs:complexType name="busqueda">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="busquedaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cancion" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancion">
+<xs:sequence>
+<xs:element name="autor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="fecha" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtener_todo">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtener_todoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cancion" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

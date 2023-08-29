@@ -1,0 +1,4 @@
+srs\cancion.class
+srs\servicesoap.class
+serversoap\server\soap\ServerSoap.class
+srs\interfaz\icancion.class
