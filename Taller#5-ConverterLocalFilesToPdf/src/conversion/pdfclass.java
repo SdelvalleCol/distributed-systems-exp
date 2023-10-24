@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class pdfclass {
     private  String input;
-    final private String output = "C:\\Users\\colom\\OneDrive\\Documentos\\GitHub\\PDFHLocal\\HilosPDF\\Data\\PDF_Convert";
+    final private String output = "C:\\Users\\admin\\Documents\\GitHub\\distributed-systems-exp\\Taller#5-ConverterLocalFilesToPdf\\Data\\PDF_Convert";
     private String[] command;
 
     public pdfclass(String input) {

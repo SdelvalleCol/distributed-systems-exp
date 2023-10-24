@@ -96,7 +96,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        List<String> data = obtener_rutas("C:\\Users\\colom\\OneDrive\\Documentos\\GitHub\\PDFHLocal\\HilosPDF\\Data\\Documents");
+        List<String> data = obtener_rutas("C:\\Users\\admin\\Documents\\GitHub\\distributed-systems-exp\\Taller#5-ConverterLocalFilesToPdf\\Data\\Documents");
         hilos_conversion(data);
 }
 }

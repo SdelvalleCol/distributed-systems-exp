@@ -14,7 +14,7 @@ public class pdfclass {
 
     public pdfclass(String contenido, String nombre) {
         //Modificar en caso de uso
-        String nn = "C:\\Users\\colom\\OneDrive\\Documentos\\GitHub\\PDFH\\PDFConverter\\HilosPDF\\pdf\\" + nombre + ".pdf";
+        String nn = "C:\\Users\\admin\\Documents\\GitHub\\distributed-systems-exp\\Taller#4-ConverterHmlToPDF\\pdf\\" + nombre + ".pdf";
         this.nombre_ruta = nn;
         this.contenidohtml = contenido;
         this.command = new String[]{
